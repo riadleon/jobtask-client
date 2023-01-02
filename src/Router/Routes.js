@@ -6,9 +6,7 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
-
-
-
+        loader: () => fetch('https://jobtask-server-eta.vercel.app/sectors'),
     }
 ])
 export default router;
