@@ -9,16 +9,8 @@ import { useLoaderData } from 'react-router-dom';
 const FormSubmit = () => {
     const myData = useLoaderData([]);
     console.log(myData);
-    // // React state to manage selected options
-    // const [selectedOptions, setSelectedOptions] = useState();
 
-    // Array of all options
-   
 
-    // // Function triggered on selection
-    // function handleSelect(data) {
-    //     setSelectedOptions(data);
-    // }
 
     return (
         <div className="bg min-h-screen flex items-center text-lg p-48" >
@@ -28,13 +20,14 @@ const FormSubmit = () => {
                 <div className="shadow">
                     <div className="flex items-center bg-transparent rounded-t-lg border-purple-500 border-b">
                         <label for="name" className="w-20 text-right mr-8 p-4 text-purple-200">Name:</label>
-                        <input type="text" name="name" id="name" placeholder="Put in your name" className="flex-1 p-4 pl-0 bg-transparent placeholder-purple-300  outline-none text-white overflow-ellipsis overflow-hidden" />
+                        <input required type="text" name="name" id="name" placeholder="Put in your name" className="flex-1 p-4 pl-0 bg-transparent placeholder-purple-300  outline-none text-white overflow-ellipsis overflow-hidden" />
                     </div>
                     <div className="flex items-center  rounded-t-lg border-purple-500 border-b mb-8 ">
-                        <label for="name" className="w-20 text-right mr-8 p-4 text-purple-200">Sectors:</label>
+                        <label for="sectors" className="w-20 text-right mr-8 p-4 text-purple-200">Sectors:</label>
                         <Select
                             data={myData}
                             touchUi={false}
+                            name={myData.value}
                             className="flex-1 p-4 pl-0 bg-transparent placeholder-purple-300  outline-none  overflow-ellipsis overflow-hidden" >
 
                         </Select>
