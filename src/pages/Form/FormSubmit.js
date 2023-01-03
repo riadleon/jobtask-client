@@ -61,7 +61,8 @@ const FormSubmit = () => {
                 <div className="shadow">
                     <div className="flex items-center bg-transparent rounded-t-lg border-purple-500 border-b">
                         <label for="name" className="w-20 text-right mr-8 p-4 text-purple-200">Name:</label>
-                        <input required type="text" name="name" id="name" placeholder="Put in your name" className="flex-1 p-4 pl-0 bg-transparent placeholder-purple-300  outline-none text-white overflow-ellipsis overflow-hidden" />
+                        <input required type="text" name="name" id="name"  className="flex-1 p-4 pl-0 bg-transparent placeholder-purple-300  outline-none text-white overflow-ellipsis overflow-hidden" />
+                        
                     </div>
                     <div className="flex items-center  rounded-t-lg border-purple-500 border-b mb-8 ">
                         <label for="sectors" className="w-20 text-right mr-8 p-4 text-purple-200">Sectors:</label>
@@ -70,14 +71,14 @@ const FormSubmit = () => {
                             touchUi={false}
                             name="sectors"
                             className="flex-1 p-4 pl-0 bg-transparent placeholder-purple-300  outline-none  overflow-ellipsis overflow-hidden" >
-
+                            
                         </Select>
 
 
                     </div>
                     <div class="mb-4">
                         <label class="block">
-                            <input name='checked' className="w-20 text-right mr-8 p-4 text-purple-200" type="checkbox" />
+                            <input required name='checked' className="w-20 text-right mr-8 p-4 text-purple-200" type="checkbox" />
                             <span class="text-lg text-purple-200">
                                 Agree to terms
                             </span>
