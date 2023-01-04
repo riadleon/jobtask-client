@@ -3,7 +3,7 @@ import { Select } from '@mobiscroll/react'; /* or import any other component */
 import '@mobiscroll/react/dist/css/mobiscroll.min.css';
 // import Select from "react-select";
 import './FormSubmit.css'
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 
@@ -29,7 +29,7 @@ const FormSubmit = () => {
 
 
         fetch('http://localhost:8000/storing', {
-            method: 'PUT',
+            method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
@@ -61,17 +61,18 @@ const FormSubmit = () => {
                 <div className="shadow">
                     <div className="flex items-center bg-transparent rounded-t-lg border-purple-500 border-b">
                         <label for="name" className="w-20 text-right mr-8 p-4 text-purple-200">Name:</label>
-                        <input required type="text" name="name" id="name"  className="flex-1 p-4 pl-0 bg-transparent placeholder-purple-300  outline-none text-white overflow-ellipsis overflow-hidden" />
-                        
+                        <input required type="text" name="name" id="name" className="flex-1 p-4 pl-0 bg-transparent placeholder-purple-300  outline-none text-white overflow-ellipsis overflow-hidden" />
+
                     </div>
                     <div className="flex items-center  rounded-t-lg border-purple-500 border-b mb-8 ">
                         <label for="sectors" className="w-20 text-right mr-8 p-4 text-purple-200">Sectors:</label>
                         <Select
                             data={myData}
                             touchUi={false}
+                            // error={true} errorMessage="Must Choose One"
                             name="sectors"
                             className="flex-1 p-4 pl-0 bg-transparent placeholder-purple-300  outline-none  overflow-ellipsis overflow-hidden" >
-                            
+
                         </Select>
 
 
@@ -86,7 +87,9 @@ const FormSubmit = () => {
                     </div>
 
                 </div>
-                <input type="submit" value='submit' className=" btn-primary block w-full rounded py-4 text-white font-bold shadow" />
+                <Link to='/edit'>
+                    <input type="submit" value='Save' className=" btn-primary block w-full rounded py-4 text-white font-bold shadow" />
+                </Link>
 
             </form>
         </div>
