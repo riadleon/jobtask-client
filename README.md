@@ -1,3 +1,15 @@
+#Vercel Live Server:
+https://jobtask-client.vercel.app/
+
+#Server Side Git Link:
+
+https://github.com/riadleon/jobtask-server
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
