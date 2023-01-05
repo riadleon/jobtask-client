@@ -10,7 +10,7 @@ const FormEdit = () => {
     const navigate = useNavigate();
 
     const onUpdateHandler = user => {
-        fetch(`http://localhost:8000/storing/${storedData._id}`, {
+        fetch(`https://jobtask-server-riadleon.vercel.app/storing/${storedData._id}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(user)

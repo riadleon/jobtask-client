@@ -19,12 +19,12 @@ const router = createBrowserRouter([
             {
                 path: '/display',
                 element: <DisplayData></DisplayData>,
-                loader: () => fetch('http://localhost:8000/storing/'),
+                loader: () => fetch('https://jobtask-server-riadleon.vercel.app/storing/'),
             },
             {
                 path: '/display/:id',
                 element: <FormEdit></FormEdit>,
-                loader: ({ params }) => fetch(`http://localhost:8000/storing/${params.id}`),
+                loader: ({ params }) => fetch(`https://jobtask-server-riadleon.vercel.app/storing/${params.id}`),
             },
         ]
     }

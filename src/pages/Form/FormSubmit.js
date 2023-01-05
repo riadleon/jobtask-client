@@ -18,7 +18,7 @@ const FormSubmit = () => {
 
 
     const onSubmitHandler = user => {
-        fetch('http://localhost:8000/storing', {
+        fetch('https://jobtask-server-riadleon.vercel.app/storing', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(user)
