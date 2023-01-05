@@ -31,6 +31,7 @@ const FormEdit = () => {
                             <label htmlFor="name" className="w-20 text-right mr-8 p-4 text-purple-200">Name:</label>
                             <input
                                 defaultValue={storedData.name}
+                                {...register('name')}
                                 className="flex-1 p-4 pl-0 bg-transparent placeholder-purple-300  outline-none text-white overflow-ellipsis overflow-hidden" /><br />
 
                         </div>
@@ -39,6 +40,7 @@ const FormEdit = () => {
                         <label htmlFor="name" className="w-20 text-right mr-8 p-4 text-purple-200">Sectors:</label>
                         <input
                             defaultValue={storedData.sectors}
+                            {...register('sectors')}
                             className="flex-1 p-4 pl-0 bg-transparent placeholder-purple-300  outline-none text-white overflow-ellipsis overflow-hidden" /><br />
 
                     </div>

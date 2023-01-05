@@ -44,8 +44,8 @@ const FormSubmit = () => {
 
     return (
         <>
-            <div className="bg min-h-screen flex items-center text-lg p-48" >
-                <h3 className='text-2xl'>Please enter your <span className='text-primary'>Name</span> <br /> <span>and pick the <span className='text-secondary'>Sectors</span> <span><br />
+            <div className="bg min-h-screen lg:flex items-center text-lg lg:p-48" >
+                <h3 className='text-2xl md:text-center'>Please enter your <span className='text-primary'>Name</span> <br /> <span>and pick the <span className='text-secondary'>Sectors</span> <span><br />
                     you are currently involved in.</span> </span> </h3>
                 <form className="p-10 md:w-2/3 lg:w-1/2 mx-auto rounded" onSubmit={handleSubmit(onSubmitHandler)}>
                     <div className="shadow">

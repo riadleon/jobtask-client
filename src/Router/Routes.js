@@ -22,7 +22,7 @@ const router = createBrowserRouter([
                 loader: () => fetch('http://localhost:8000/storing/'),
             },
             {
-                path: '/edit/:id',
+                path: '/display/:id',
                 element: <FormEdit></FormEdit>,
                 loader: ({ params }) => fetch(`http://localhost:8000/storing/${params.id}`),
             },
