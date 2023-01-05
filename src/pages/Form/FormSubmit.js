@@ -10,6 +10,7 @@ import { toast } from 'react-hot-toast';
 
 const FormSubmit = () => {
     const myData = useLoaderData([]);
+    const { _id } = myData;
 
     const { register, handleSubmit, resetField, rest, formState: { errors } } = useForm();
     const [message, setMessage] = useState('');
@@ -53,7 +54,7 @@ const FormSubmit = () => {
                             <input type='text' onFocus={onFocusHandler} {...register('name', {
                                 required: "Name is Required"
                             })} className="flex-1 p-4 pl-0 bg-transparent placeholder-purple-300  outline-none text-white overflow-ellipsis overflow-hidden" /><br />
-                            {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
+                            {errors.name && <p className='text-purple-500'>{errors.name.message}</p>}
                         </div>
                     </div>
                     <div className="flex items-center  rounded-t-lg border-purple-500 border-b mb-8 ">
@@ -62,7 +63,7 @@ const FormSubmit = () => {
                             {
                                 myData.map(data =>
 
-                                    <option className="text-purple-500 flex-1 p-4 pl-0 bg-transparent placeholder-purple-300  outline-none  overflow-ellipsis overflow-hidden" value={data.value}>{data.text}</option>
+                                    <option className="text-green-700 flex-1 p-4 pl-0 bg-transparent placeholder-purple-300  outline-none  overflow-ellipsis overflow-hidden" value={data.value}>{data.text}</option>
 
                                 )
                             }
@@ -78,12 +79,13 @@ const FormSubmit = () => {
                             </span>
                         </label>
                     </div>
-                    {/* <Link to='/edit'>
+                    {/* <Link to='/display'>
                         <input type="submit" value='submit' className=" btn-primary block w-full rounded py-4 text-white font-bold shadow" />
                     </Link> */}
 
                     <button className=" btn-primary block w-full rounded py-4 text-white font-bold shadow" type="submit">Submit</button>
-                    {/* <Link to={"/"}><button>Display</button></Link> */}
+                    <br />
+                    <Link to={"/display"}><button className=" btn-secondary  text-center text-white font-bold shadow">Edit Your Data</button></Link>
                 </form>
                 <p style={{ color: "pink" }}>{message}</p>
                 <p style={{ color: "orange" }}>{errorMessage}</p>
