@@ -3,7 +3,7 @@ import { Select } from '@mobiscroll/react'; /* or import any other component */
 import '@mobiscroll/react/dist/css/mobiscroll.min.css';
 // import Select from "react-select";
 import './FormSubmit.css'
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 
@@ -15,6 +15,7 @@ const FormSubmit = () => {
     const { register, handleSubmit, resetField, rest, formState: { errors } } = useForm();
     const [message, setMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate();
 
 
     const onSubmitHandler = user => {
@@ -29,6 +30,7 @@ const FormSubmit = () => {
             resetField("sectors");
             resetField("checked");
             setErrorMessage('');
+            navigate('/display')
         }).catch(error => {
             console.error(error.message);
             toast('Insert Data failed!!!');
@@ -83,9 +85,9 @@ const FormSubmit = () => {
                         <input type="submit" value='submit' className=" btn-primary block w-full rounded py-4 text-white font-bold shadow" />
                     </Link> */}
 
-                    <button className=" btn-primary block w-full rounded py-4 text-white font-bold shadow" type="submit">Submit</button>
+                    <button className=" btn-primary block w-full rounded py-4 text-white font-bold shadow" type="submit">Save</button>
                     <br />
-                    <Link to={"/display"}><button className=" btn-secondary  text-center text-white font-bold shadow">Edit Your Data</button></Link>
+
                 </form>
                 <p style={{ color: "pink" }}>{message}</p>
                 <p style={{ color: "orange" }}>{errorMessage}</p>
