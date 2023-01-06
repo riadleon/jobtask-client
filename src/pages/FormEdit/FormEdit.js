@@ -24,7 +24,7 @@ const FormEdit = () => {
     return (
         <div>
 
-            <div className="bg min-h-screen flex items-center text-lg p-48" >
+            <div className="bg min-h-screen flex items-center text-lg lg:p-48" >
                 <form className="p-10 md:w-2/3 lg:w-1/2 mx-auto rounded" onSubmit={handleSubmit(onUpdateHandler)}>
                     <div className="shadow">
                         <div className="flex items-center bg-transparent rounded-t-lg border-purple-500 border-b">
